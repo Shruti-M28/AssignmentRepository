@@ -1,0 +1,51 @@
+
+mkdir assignmentRepo
+cd assignmentRepo
+notepad masterFile.txt
+cat masterFile.txt
+
+notepad File1.txt
+notepad File2.txt
+notepad File3.txt
+git init
+
+git add masterFile.txt
+git commit -m "This is for commit for Master Branch"
+
+git checkout -b Dev
+git add textFile1.txt
+git commit -m "File1 Commited in Dev branch"
+git checkout -b Test
+git add File2.txt File3.txt
+git commit -m "file2 and file3 are commited in Test branch"
+git log
+
+git checkout Dev
+notepad File1.txt
+(Modified File1)
+cat File1.txt
+
+git add File1.txt
+git commit -m "Modified File1 of Dev branch"
+git log
+git status
+
+git checkout master
+git merge Dev Test
+git log 
+
+git remote add origin https://github.com/Shruti-M28/AssignmentRepository.git
+git push -u origin master
+
+cd ..
+mkdir cloneRepository
+cd cloneRepository
+git clone https://github.com/Shruti-M28/AssignmentRepository.git
+
+(git bash closed)
+cd AssignmentRepository
+notepad Solution.txt
+cat Solution.txt
+git add Solution.txt
+git commit -m "Added Solution.txt"
+git push -u origin master
